@@ -1,0 +1,47 @@
+<body>
+    <div class="box1">
+        <h1>Register here</h1>
+
+        <mat-form-field appearance="fill">
+            <mat-label>prefer for</mat-label>
+            <mat-select>
+                <mat-option *ngFor="let prefer of relation" [value]="prefer.key">
+                    {{prefer.keyValue}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="FirstName" type="text">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="LastName" type="text">
+        </mat-form-field>
+
+        <mat-radio-group>
+            <mat-radio-button value="1">Male</mat-radio-button>
+            <mat-radio-button value="2">Female</mat-radio-button>
+        </mat-radio-group>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Religion</mat-label>
+            <mat-select>
+                <mat-option *ngFor="let religion of rel" [value]="religion.value">
+                    {{religion.viewValue}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Date of Birth</mat-label>
+            <input matInput [matDatepicker]="picker">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+        <button mat-button class="submit">Submit</button>
+
+    </div>
+
+</body>
